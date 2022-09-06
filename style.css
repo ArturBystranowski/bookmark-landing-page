@@ -354,10 +354,11 @@ h4 {
 }
 
 input {
-	padding: 11px 5px;
+	padding: 8px 5px;
 	border-radius: 5px;
+	border: none;
 	width: 300px;
-	height: 50px;
+	height: 44px;
 }
 
 .input-wrapper {
@@ -399,7 +400,7 @@ footer {
 }
 
 .bottom-right li {
-	padding: 10px;
+	padding: 10px 20px;
 }
 
 .bottom-left {
@@ -437,4 +438,153 @@ svg path.active {
 	rotate: 180deg;
 	transform-origin: center;
 	stroke: red;
+}
+
+@media screen and (max-width: 900px) {
+	* {
+		font-size: 16px;
+	}
+	header {
+		padding: 20px;
+	}
+	header nav ul {
+		display: none;
+	}
+	.section-welcome {
+		width: auto;
+		margin: auto;
+		flex-direction: column-reverse;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+	.section-welcome-left {
+		/* height: 500px; */
+		height: auto;
+		width: 100%;
+		text-align: center;
+		padding: 20px;
+	}
+	.section-welcome-right {
+		height: 300px;
+		width: 100%;
+	}
+
+	.section-welcome-right img {
+		right: 50%;
+		transform: translateX(50%);
+		max-width: 400px;
+	}
+
+	.img-bg {
+		top: 120px;
+	}
+	button {
+		padding: 12px 12px;
+	}
+	h2 {
+		font-size: 1.8rem;
+		padding: 0 20px;
+	}
+	.features-info,
+	.download-info {
+		width: 100%;
+		margin: 0;
+		padding: 20px;
+	}
+	.features-select {
+		flex-direction: column;
+	}
+	.features-select span {
+		text-align: center;
+		width: 80%;
+	}
+	.features-select span:first-of-type {
+		border-top: 2px solid hsl(229, 100%, 95%);
+	}
+
+	.features-tab.active {
+		flex-direction: column;
+		align-items: center;
+	}
+	.section-features-left {
+		width: 100%;
+		height: 55vw;
+	}
+	.section-features-left img {
+		height: 40vw;
+		width: 60vw;
+		right: 50%;
+		transform: translateX(50%);
+	}
+	.features-img-bg {
+		height: 40vw;
+		width: 80vw;
+		border-radius: 0 0 50% 0;
+		top: 20%;
+	}
+	.section-features-right {
+		text-align: center;
+		width: 100%;
+		margin: 0;
+		padding: 20px;
+	}
+
+	.section-features-right h3 {
+		font-size: 1.8rem;
+	}
+	.extensions-wrapper {
+		flex-direction: column;
+		height: auto;
+	}
+	.extension {
+		padding: 40px 30px 30px 30px;
+		width: 80%;
+		max-width: 300px;
+		height: auto;
+	}
+	.extension-chrome {
+		align-self: center;
+	}
+	.extension-opera {
+		align-self: center;
+	}
+	.section-faq {
+		width: 100%;
+		padding: 20px;
+	}
+	.more-info-btn {
+		margin: 20px auto 60px;
+	}
+	.form-wrapper {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+	}
+	.section-form {
+		text-align: center;
+		padding: 20px;
+	}
+	.section-form p {
+		font-size: 0.8rem;
+	}
+	.section-form h2 {
+		width: 100%;
+		margin: 10px auto;
+	}
+	.section-form button {
+		margin: 0;
+		width: 100%;
+	}
+
+	.bottom-left ul {
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+
+	footer {
+		flex-direction: column;
+	}
 }
