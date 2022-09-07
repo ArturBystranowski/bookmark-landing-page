@@ -57,6 +57,11 @@ nav ul {
 	transition: 0.4s;
 	font-size: 16px;
 	text-decoration: none;
+	color: var(--very-dark-blue);
+}
+.links-top a:visited,
+.links-top a:focus {
+	color: var(--very-dark-blue);
 }
 
 .links-top a:hover {
