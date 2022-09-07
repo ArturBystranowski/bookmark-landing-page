@@ -12,6 +12,7 @@
 	font-family: "Rubik", sans-serif;
 	align-items: center;
 	font-size: 18px;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -34,16 +35,31 @@ nav ul {
 	padding: 0 30px;
 }
 
-.links-top {
+.menu-ham {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 100vw;
+	opacity: 0;
+	transition: 0.3s ease-out;
+}
+
+.icon-ham {
+	display: none;
+}
+
+.links-top a {
 	display: inline-block;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	cursor: pointer;
 	transition: 0.4s;
+	font-size: 16px;
+	text-decoration: none;
 }
 
-.links-top:hover {
+.links-top a:hover {
 	color: var(--soft-red);
 }
 .login-btn {
@@ -222,10 +238,6 @@ h3 {
 	justify-content: center;
 	text-align: center;
 	height: 450px;
-}
-
-.section-download h2 {
-	margin-top: 100px;
 }
 
 .extension {
@@ -447,9 +459,110 @@ svg path.active {
 	header {
 		padding: 20px;
 	}
-	header nav ul {
+	.menu-default-list {
 		display: none;
 	}
+
+	.menu-default svg {
+		margin: 20px 30px;
+	}
+	header {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		width: 100vw;
+		background-color: white;
+	}
+	.icon-ham {
+		display: block;
+		cursor: pointer;
+	}
+
+	.icon-close {
+		cursor: pointer;
+	}
+
+	.menu-ham.open {
+		position: fixed;
+		opacity: 1;
+		width: 100vw;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		background-color: hsla(229, 31%, 21%, 0.98);
+		z-index: 10;
+	}
+
+	.menu-ham ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+
+	.menu-ham li {
+		font-size: 1.5rem;
+		font-weight: 400;
+		color: white;
+		padding: 20px;
+		width: 90%;
+		border-bottom: 1px solid var(--grayish-blue);
+		border-top: 1px solid var(--grayish-blue);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+	.menu-ham li a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-weight: 400;
+		color: white;
+	}
+
+	.menu-ham li.login {
+		border-bottom: none;
+		padding: 20px 0;
+	}
+
+	.menu-ham li.media {
+		border: none;
+		position: absolute;
+		bottom: 50px;
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	li.media svg {
+		margin: 0 15px;
+	}
+
+	.ham-menu-login {
+		background-color: transparent;
+		font-size: 1.5rem;
+		width: 100%;
+		margin: 0;
+		border: 2px solid white;
+		margin: 0 -30;
+	}
+
+	.menu-ham-header {
+		display: flex;
+		width: 90%;
+		justify-content: space-between;
+		align-items: center;
+		padding: 40px 30px 40px;
+		margin: 0 auto;
+	}
+
+	.menu-ham-header path,
+	.menu-ham-header circle {
+		fill: white;
+	}
+	.menu-ham-header path.inner-fill {
+		fill: var(--very-dark-blue);
+	}
+
 	.section-welcome {
 		width: auto;
 		margin: auto;
@@ -460,7 +573,6 @@ svg path.active {
 		font-size: 2rem;
 	}
 	.section-welcome-left {
-		/* height: 500px; */
 		height: auto;
 		width: 100%;
 		text-align: center;
@@ -469,6 +581,7 @@ svg path.active {
 	.section-welcome-right {
 		height: 300px;
 		width: 100%;
+		margin-top: 50px;
 	}
 
 	.section-welcome-right img {
@@ -487,6 +600,13 @@ svg path.active {
 		font-size: 1.8rem;
 		padding: 0 20px;
 	}
+	.section-features h2,
+	.section-faq h2,
+	.section-download h2 {
+		padding-top: 100px;
+		margin-top: 0;
+	}
+
 	.features-info,
 	.download-info {
 		width: 100%;
